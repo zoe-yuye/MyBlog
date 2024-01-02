@@ -1,0 +1,58 @@
+h2{
+    margin: 1.3rem 0 1.8rem 0;
+    background-color: rgba(244, 249, 251, 0.7);
+    animation: shake 3s 1;
+    font-family: 'Day', sans-serif;
+    text-align: center;
+    background-color:transparent ;
+}
+main{
+    color: #324179;
+    margin: 20px 10%;
+    min-width: 300px;
+}
+
+form{
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255,0.6);
+    box-shadow:inset -1px -1px 5px rgba(51, 66, 122, 0.2);
+}
+form #blog_text,form #blog_title{
+    width: 90%;
+    min-width: 100px;
+    margin:0.5rem 1rem;
+}
+form #blog_text{
+    height: 200px;
+    padding: 5px;
+    overflow: auto;
+    resize: none;
+    
+}
+form #submit{
+    display: block;
+    margin-top: 1rem;
+    padding: 5px 8px;
+    color: #fed287;
+    font-weight: bold;
+    border: none;
+    width: 80px;
+    background-color: #6cadaf;
+    border-radius: 20px;
+    box-shadow:inset -2px -2px 5px rgba(51, 66, 122, 0.2);
+}
+form #addTag{
+    width: 50px;
+    
+}
+form .tag{
+    padding: 5px;
+    display: inline-block;
+}
+.hint{
+    font-size: 13px;
+    color: rgb(123, 26, 26);
+    margin: 5px;
+}

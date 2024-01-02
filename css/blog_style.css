@@ -1,0 +1,119 @@
+main{
+    min-width: 200px;
+    margin: 2rem 5rem;
+    color: #324179;
+}
+h1{
+    font-family: system-ui;
+}
+.article .time{
+    color:#6c83ac;
+    margin: 0.7rem 0 1.5rem 0.5rem;
+}
+.article .body{
+    font-size: 16px;
+    color: #4f5057;
+    margin-bottom: 2rem;
+    line-height: 22px;
+}
+.time .icon{
+    margin-bottom: -5px;
+    
+}
+.interact img{
+    cursor: pointer;
+}
+.interact img:hover,form #submit:hover{
+    scale: 0.9;
+}
+.interact img:active, form #submit:active{
+    scale: 1.1;
+}
+.interact span{
+    vertical-align: 0.2em;
+    margin-right: 2rem;
+}
+form{
+    margin-top: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255,0.4);
+    box-shadow:inset -1px -1px 5px rgba(51, 66, 122, 0.2);
+}
+form *{
+    margin-bottom:0.5rem;
+    margin-right: 1rem;
+}
+form #comment_text{
+    width: 80%;
+    max-width: 600px;
+    min-width: 100px;
+    height: 80px;
+    padding: 5px;
+    overflow: auto;
+    resize: none;
+}
+form h4{
+    display: inline;
+}
+form #submit{
+    margin-top: 0.3rem;
+    padding: 5px 8px;
+    color: #324179;
+    font-weight: bold;
+    border: none;
+    background-color:rgba(255,255,255,0.8);
+    border-radius: 20px;
+    box-shadow:inset -1px -1px 5px rgba(51, 66, 122, 0.2);
+}
+.edit_icon{
+    margin-left: 20px;
+    height: 17px;
+    width: 17px;
+    opacity: 0.7;
+}
+.spe{
+    border-style: dashed;
+    color: #6cadaf;
+    margin-top: 1rem;
+}
+.comments{
+    margin-top: 2rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255,0.3);
+}
+.comments p{
+    margin-top: 1rem;
+}
+.comments span{
+    vertical-align: -0.5rem;
+    font-size: smaller;
+    margin-right: 0.5rem;
+}
+.comments hr{
+    margin-top: 0.3rem;
+}
+.sort a{
+    font-size: 13px;
+    vertical-align: -0.5rem;
+}
+
+@media(max-width:600px){
+    main{
+        margin: 2rem 2rem;
+    }
+}
+.tags{
+    margin-bottom: 10px;
+    color:#4f8588;
+    font-size: 15px;
+    font-weight: bold;
+}
+.tag{
+    color:#6cadaf;
+    background-color: #fcdda8;
+    padding: 2px 8px;
+    border-radius: 20px;
+    font-size: 13px;
+}

@@ -1,0 +1,107 @@
+main{
+    flex: 1;
+}
+.dropdown_menu{
+    z-index: 1;
+}
+#slide{
+    width: max-content;
+    margin-top: 50px;
+   
+}
+.item{
+    width: 13%;
+    max-width: 170px;
+    min-width: 80px;
+    height: 18%;
+    background-position: 50% 50%;
+    background-size: cover;
+    display: inline-block;
+    position: absolute;
+    right: 13%;
+    transform: translateY(-50%);
+    border-radius: 20px;
+    box-shadow: 2px 2px 20px rgb(85, 88, 94);
+    transition: 1s ease-in-out;
+}
+.item:nth-child(1), .item:nth-child(2){
+    max-width: 2000px;
+    min-width: 200px;
+    top:53%;
+    right:23%;
+    width: 60%;
+    height: 74%;
+}
+.item:nth-child(3){
+    top: 33%;
+}
+.item:nth-child(4){
+    top: 53%;
+}
+.item:nth-child(5){
+    top: 73%;
+}
+.item:nth-child(n+6){
+    top: 100%;
+    display: none;
+}
+.item .content{
+    opacity: 0;
+    transition: 2s ease-in-out;
+    position: absolute;
+    left: 50px;
+    top: 5%;
+    font-family: system-ui;
+    color: #fed287;
+}
+.item .name{
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.item:hover:nth-child(2) .content {
+    opacity: 1;
+}
+
+.item .description{
+    margin: 10px 0;
+}
+.item button{
+    padding: 5px 10px;
+    border: none;
+    background-color: #fed287;
+    color: #6c83ac;
+    font-size: x-small;
+    border-radius: 10px;
+    font-weight: bold;
+}
+.swift *{
+    position: absolute;
+    top:17%;
+    right: 17%;
+    text-align: center;
+    background-color: rgba(255, 211, 135, 0.7);
+    box-shadow:inset -1px -1px 2px rgba(102, 103, 106, 0.2);
+    line-height: 25px;
+    width: 25px;
+    height: 25px;
+    color: #6cadaf;
+    border-radius: 100%;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+#swift2{
+    top: 84%;
+}
+.swift *:hover{
+    cursor: pointer;
+    scale: 0.9;
+    background-color: rgba(255, 211, 135, 0.6);
+}
+.swift *:active{
+    scale: 1.1;
+}
+main .icon{
+    display: none;
+}
