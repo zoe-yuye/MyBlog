@@ -1,6 +1,7 @@
 # Personal Blog and Profile
 
 Welcome to my personal blog and profile showcase! This web application, crafted with PHP, JavaScript, and CSS, utilizes SQL as the database. It serves as a platform to showcase my personal profile and provides visitors with an interactive and visually appealing experience.
+The website is hosted on InfinityFree, providing access through the following link: [MyBlog](http://zoeblogzheng.lovestoblog.com/).
 
 ## Features
 
