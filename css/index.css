@@ -8,16 +8,23 @@ main{
 main .content{
     flex:1;
 }
+hr {
+    border: none;
+    height: 1px; 
+    background-color: rgba(0, 0, 0, 0.2); 
+}
 
 h1{
     font-family: 'Betsy', sans-serif;
     padding: 0.5rem;
     text-align: center;
     color: #5b6485;
+    margin : 1rem 0 1rem 0;
     background-color: rgba(255,255,255, 0.1) ;
     /* border-bottom: 1px solid #616665; */
 }
-h2{
+
+.my_blog h2, .gallery h2, .skills h2 {
     margin: 1.3rem 0 1.8rem 0;
     background-color: rgba(244, 249, 251, 0.7);
     animation: shake 3s 1;
@@ -25,10 +32,21 @@ h2{
     text-align: center;
     background-color:transparent ;
 }
-
+.skills{
+    padding: 10px 5%;
+}
+.skills a{
+    margin:20px;
+}
+.skills div{
+    margin-bottom: 10px;
+}
+.skills h3{
+    margin: 15px 0;
+}
 .avatar{
-    width:70px;
-    height: 70px;
+    width:80px;
+    height: 80px;
     border-radius: 100%;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
     border: 2px solid rgb(160,160,160);
@@ -56,14 +74,14 @@ h2{
     box-shadow:inset -1px -1px 5px rgba(51, 66, 122, 0.2);
 }
 .about_me .me{
-    margin: 22px;
+    margin: 30px 30px 10px 30px;
 }
 .about_me p{
     text-align: justify;
     color: rgb(102, 102, 105);
 }
 .about_me .name{
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bold;
     margin-bottom: 10px;
     color: #353d5a;
@@ -75,12 +93,12 @@ h2{
 }
 
 .about_me .intro{
-    margin: 10px 18%;
-    font-size: small;
+    margin: 15px 10%;
+    font-size: 16px;
     line-height: 18px;
 }
 
-.my_blog,.gallery{
+.my_blog,.gallery, .skills{
     flex: 1;
     margin-top: 10px;
     color: #324179;
@@ -90,19 +108,14 @@ h2{
 }
 .my_blog .title{
     cursor: pointer;
-    color: #100f0f;
+    color: #1b284a;
+}
+.my_blog .title:hover{
+    cursor: pointer;
+    color: #464f64;
 }
 .my_blog .blog{
-    margin: 15px;
-    height: 150px;
-}
-.my_blog .body{
-    margin: 10px;
-    font-size: 13px;
-    line-height: 20px;
-    max-height: 80px;
-    overflow: hidden;
-    color: #5b6485;
+    margin: 30px;
 }
 
 .blog .date{

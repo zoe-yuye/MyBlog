@@ -14,15 +14,15 @@ $conn = new mysqli("localhost", "root", "", "myblog");
 </head>
 <body>
     <header>
-        <h1>Welcome to Zoe's Blog!</h1>
         <?php include 'header.php'?>
+        <h1>Welcome to Zoe's Blog!</h1>
     </header>
     <main>
         <img src="images/up.png" alt="" class="icon" id="backtop">
         <div class="content">
             <div class="about_me">
                 <div class="my_info">
-                    <img src="images/me.png" alt="" class="avatar">
+                <a href="contact.php"><img src="images/me.png" alt="" class="avatar"></a>
                     <div class="me">
                         <p class="name">Zoe Zheng</p>
                         <ul class="my_info">
@@ -32,19 +32,35 @@ $conn = new mysqli("localhost", "root", "", "myblog");
                     </ul>
                     </div>
                 </div>
-                <p class="intro">I'm a software development student who loves travel, photography, and coding. Follow my blog for a peek into the world of tech, creativity, and my adventures on the road. <p>
+                <p class="intro">Embarking on a self-learning journey in software development, I discovered a deep passion for IT that led me to pursue a Master's Degree in Software Development. With a background in International Economy and Trade and over two years in hospitality management, my diverse experiences from backpacking to various jobs have honed my adaptability and problem-solving skills.
+                    <br><br> As I transition into the IT field, I'm excited to blend my love for travel, photography, and coding. 
+                    Join me on my blog as I explore the intersection of tech, creativity, and adventures on the road!<p>
+            </div>
+            <div class="skills">
+                <h2>My Skills</h2>
+                <?php include 'skills.php'?>
             </div>
             <div class="my_blog">
                 <h2>Blog Wolrd</h2>
-               
                 <?php 
-                    $result = $conn->query("SELECT * FROM blogs ORDER BY publish_date DESC LIMIT 3;");
+                    $result = $conn->query("SELECT * FROM blogs ORDER BY publish_date DESC LIMIT 2;");
                     foreach ($result as $row) {
                     $title = $row['title'];
                 ?>
                 <div class="blog">
-                    <h3 class="title"><a href="blog.php?title=<?php echo urlencode($row['title']); ?>"><?php echo $row['title']?></a></h3>
-                    <p class="body"><?php echo $row['body']?></p>
+                    <a href="blog.php?title=<?php echo urlencode($row['title']); ?>"><h3 class="title"><?php echo $row['title']?></h3></a>
+                    <br>
+                    <?php
+                        $text = $row['body'];
+                        $maxWords = 100;
+                        $words = explode(' ', $text);
+                        if (count($words) > $maxWords) {
+                            $words = array_slice($words, 0, $maxWords);
+                            $text = implode(' ', $words) . '...';
+                        }
+                        echo '<p class="body">' . $text . '</p>';
+                    ?>
+                    <br>
                     <p class="date"><?php echo ' Published: '; echo $row['publish_date']?>
                         <?php
                             $comments = $conn->query("SELECT COUNT(*) AS comment_count FROM `comments` WHERE `blog_title` = '$title';")->fetch_assoc();
@@ -55,14 +71,14 @@ $conn = new mysqli("localhost", "root", "", "myblog");
                             <?php 
                             echo $comment_count;
                         ?>
-                         <?php
-                        if(isset($row['likes']) && $row['likes'] !=0){
-                            echo "| ";
-                            ?>
-                            <img src="images/like.png" class = "icon" alt="">
-                            <?php 
-                            echo$row['likes'];
-                        }
+                        <?php
+                            if(isset($row['likes']) && $row['likes'] !=0){
+                                echo "| ";
+                                ?>
+                                <img src="images/like.png" class = "icon" alt="">
+                                <?php 
+                                echo$row['likes'];
+                            }
                         ?>
                     </p>
                     <hr>

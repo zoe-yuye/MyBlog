@@ -21,7 +21,7 @@ main{
     right: 13%;
     transform: translateY(-50%);
     border-radius: 20px;
-    box-shadow: 2px 2px 20px rgb(85, 88, 94);
+    box-shadow: 2px 2px 10px rgb(143, 147, 155);
     transition: 1s ease-in-out;
 }
 .item:nth-child(1), .item:nth-child(2){

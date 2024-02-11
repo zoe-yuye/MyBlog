@@ -87,7 +87,17 @@ if (isset($_SESSION['admin'])) {
                             <h3 class="title">
                                 <a href="blog.php?title=<?php echo urlencode($row['title']); ?>"><?php echo $row['title']?></a>
                             </h3>
-                            <p class="body"><?php echo $row['body']?></p>
+                            <?php
+                                $text = $row['body'];
+                                $maxWords = 150;
+                                $words = explode(' ', $text);
+                                if (count($words) > $maxWords) {
+                                    $words = array_slice($words, 0, $maxWords);
+                                    $text = implode(' ', $words) . '...';
+                                }
+                                echo '<p class="body">' . $text . '</p>';
+                            ?>
+                            <br>
                             <p class="date"><?php echo ' Published: '; echo $row['publish_date']?>
                                 <?php
                                     $comments = $conn->query("SELECT COUNT(*) AS comment_count FROM `comments` WHERE `blog_title` = '$title';")->fetch_assoc();
